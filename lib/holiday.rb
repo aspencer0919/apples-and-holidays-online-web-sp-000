@@ -88,8 +88,10 @@ def all_holidays_with_bbq(holiday_hash)
   bbq_holidays = []
   holiday_hash.each do |k, v|
     v.each do |k1, v1|
-      if v1 == "BBQ"
-        bbq_holidays << k1
+      v1.each do |k2, v2|
+        if v2 == "BBQ"
+          bbq_holidays << k1
+        end
       end
     end
   end
